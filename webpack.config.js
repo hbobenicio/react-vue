@@ -75,11 +75,16 @@ const config = (env, options) => ({
   ],
 
   resolve: {
-    extensions: ['.js', '.jsx', '.mjs', '.vue']
+    extensions: ['.js', '.jsx', '.mjs', '.vue'],
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+      '@react': path.resolve(__dirname, 'src/react/'),
+      '@vue': path.resolve(__dirname, 'src/vue/')
+    }
   },
 
   devServer: {
-    contentBase: path.join(__dirname, "dist")
+    contentBase: path.join(__dirname, "dist/")
   }
 })
 
